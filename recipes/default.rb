@@ -18,3 +18,17 @@ remote_file "#{Chef::Config[:file_cache_path]}/servicemix.zip" do
   action :create_if_missing
   source node[:smix][:dist_url]
 end
+
+directory node[:smix][:install_dir] do
+  action :create
+end
+
+package 'unzip' do
+  action :install
+end
+
+smix_dir = ::File.join(node[:smix][:install_dir], "apache-servicemix-#{node[:smix][:version]}")
+
+execute "unzip #{Chef::Config[:file_cache_path]}/servicemix.zip -d #{node[:smix][:install_dir]}" do
+  not_if { ::File.directory?(smix_dir) }
+end

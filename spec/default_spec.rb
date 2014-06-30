@@ -26,9 +26,14 @@ describe 'servicemix::default' do
       expect(chef_run).to create_remote_file_if_missing("#{Chef::Config[:file_cache_path]}/servicemix.zip")
     end
 
-    it 'extract the servicemix distribution to a configurable location'
+    it 'extract the servicemix distribution to a configurable location' do
+      expect(chef_run).to install_package('unzip')
+      expect(chef_run).to create_directory('/usr/local/smix')
+      expect(chef_run).to run_execute('unzip /var/chef/cache/servicemix.zip -d /usr/local/smix')
+    end
+
   end
-  
+
   context 'Service setup' do
     it 'creates a user for the service'
     it 'daemonises servicemix'
