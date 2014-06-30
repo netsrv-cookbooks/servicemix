@@ -1,8 +1,8 @@
 name             'servicemix'
-maintainer       'YOUR_NAME'
-maintainer_email 'YOUR_EMAIL'
-license          'All rights reserved'
-description      'Installs/Configures servicemix'
-long_description 'Installs/Configures servicemix'
+maintainer       'Colin Woodcock'
+maintainer_email 'cwoodcock@netsrv-consulting.com'
+license          'Apache License, Version 2.0'
+description      'Installs/configures Apache Servicemix'
+long_description 'Installs/configures Apache Servicemix'
 version          '0.1.0'
 
