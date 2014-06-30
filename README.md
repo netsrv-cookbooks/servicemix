@@ -1,14 +1,17 @@
 # servicemix-cookbook
 
-Installs and configures Apache ServiceMix
+Installs and configures Apache ServiceMix.
 
 ## Requirements
-Java must be installed on the node.
+Java must be installed.  Although this cookbook does not install it for you, Berkshelf has been configured with the
+[java cookbook](https://github.com/socrata-cookbooks/java) which should make adding it to your node's run list easier.
 
 ## Supported Platforms
 
-* Ubuntu
-  * 14.04 Trusty Tahr
+This cookbook has been tested on:
+
+* Ubuntu 14.04 Trusty Tahr
+* Centos 6.5
 
 ## Attributes
 
@@ -43,16 +46,16 @@ currently exists for moving over installed jars and bundles, care should be take
 
 Author:: Colin Woodcock (cwoodcock@netsrv-consulting.com)
     
-    Copyright (C) 2014 NetSrv Consulting Ltd.
+Copyright (C) 2014 NetSrv Consulting Ltd.
     
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
     
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
     
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
