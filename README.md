@@ -22,6 +22,10 @@ Java must be installed on the node.
 ## Usage
 
 ### servicemix::default
+Downloads the zipball from a configurable URL, and extracts it to /usr/local/smix/apache-servicemix-x.x.x by default.
+
+A symlink at /usr/local/smix/current is created referencing it, easing upgrades.  However as no mechanism
+currently exists for moving over installed jars and bundles, care should be taken.
 
 ## Contributing
 

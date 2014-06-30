@@ -32,6 +32,10 @@ describe 'servicemix::default' do
       expect(chef_run).to run_execute('unzip /var/chef/cache/servicemix.zip -d /usr/local/smix')
     end
 
+    it 'creates a link to the extracted distribution' do
+      expect(chef_run).to create_link('/usr/local/smix/current')
+    end
+
   end
 
   context 'Service setup' do

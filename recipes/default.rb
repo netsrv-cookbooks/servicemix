@@ -32,3 +32,7 @@ smix_dir = ::File.join(node[:smix][:install_dir], "apache-servicemix-#{node[:smi
 execute "unzip #{Chef::Config[:file_cache_path]}/servicemix.zip -d #{node[:smix][:install_dir]}" do
   not_if { ::File.directory?(smix_dir) }
 end
+
+link ::File.join(node[:smix][:install_dir], 'current') do
+  to smix_dir
+end
