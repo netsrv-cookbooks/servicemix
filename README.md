@@ -18,6 +18,9 @@ Java must be installed on the node.
   * Default: */usr/local/smix*
 * `[:smix][:version]`
   * Default: *5.1.0*
+* `[:smix][:user]`
+  * Default: smix
+  * Local account created if not present and configured with /sbin/nologin shell
 
 ## Usage
 

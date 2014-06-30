@@ -36,3 +36,10 @@ end
 link ::File.join(node[:smix][:install_dir], 'current') do
   to smix_dir
 end
+
+user node[:smix][:user] do
+  action :create
+  shell '/sbin/nologin'
+end
+
+execute "chown -R #{node[:smix][:user]}.#{node[:smix][:user]} #{smix_dir}"

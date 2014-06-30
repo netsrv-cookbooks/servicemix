@@ -17,3 +17,4 @@
 default[:smix][:dist_url] = 'http://www.mirrorservice.org/sites/ftp.apache.org/servicemix/servicemix-5/5.1.0/apache-servicemix-5.1.0.zip'
 default[:smix][:install_dir] = '/usr/local/smix'
 default[:smix][:version] = '5.1.0'
+default[:smix][:user] = 'smix'

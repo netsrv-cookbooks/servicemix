@@ -11,3 +11,15 @@
 	[ "$status" -eq 0 ]
   [ "$output" = '/usr/local/smix/apache-servicemix-5.1.0' ]
 }
+
+@test 'installation is owned by the service user' {
+	run stat -c %U /usr/local/smix/apache-servicemix-5.1.0
+	[ "$status" -eq 0 ]
+  [ "$output" = 'smix' ]
+}
+
+@test 'installation group is the service users' {
+	run stat -c %G /usr/local/smix/apache-servicemix-5.1.0
+	[ "$status" -eq 0 ]
+  [ "$output" = 'smix' ]
+}

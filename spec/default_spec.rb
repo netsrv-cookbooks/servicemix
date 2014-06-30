@@ -39,7 +39,11 @@ describe 'servicemix::default' do
   end
 
   context 'Service setup' do
-    it 'creates a user for the service'
+    it 'creates a user for the service' do
+      expect(chef_run).to create_user('smix').with(shell: '/sbin/nologin')
+      expect(chef_run).to run_execute('chown -R smix.smix /usr/local/smix/apache-servicemix-5.1.0')
+    end
+
     it 'daemonises servicemix'
     it 'configures the firewall if present'
   end
