@@ -23,3 +23,7 @@
 	[ "$status" -eq 0 ]
   [ "$output" = 'smix' ]
 }
+
+@test 'servicemix is running' {
+	ps aux | grep org.apache.karaf.main.Main$ > /dev/null
+}

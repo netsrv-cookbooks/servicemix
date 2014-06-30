@@ -40,6 +40,18 @@ end
 user node[:smix][:user] do
   action :create
   shell '/sbin/nologin'
+  home '/home/smix'
 end
 
 execute "chown -R #{node[:smix][:user]}.#{node[:smix][:user]} #{smix_dir}"
+
+template '/etc/init.d/servicemix' do
+  source 'sysv.init.erb'
+  mode 0755
+  variables(
+    :home => smix_dir,
+    :user => node[:smix][:user]
+  )
+end
+
+execute '/etc/init.d/servicemix start'

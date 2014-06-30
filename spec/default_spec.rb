@@ -44,7 +44,11 @@ describe 'servicemix::default' do
       expect(chef_run).to run_execute('chown -R smix.smix /usr/local/smix/apache-servicemix-5.1.0')
     end
 
-    it 'daemonises servicemix'
+    it 'daemonises servicemix' do
+      expect(chef_run).to create_template('/etc/init.d/servicemix')
+      expect(chef_run).to run_execute('/etc/init.d/servicemix start')
+    end
+
     it 'configures the firewall if present'
   end
 

@@ -1,0 +1,35 @@
+#
+# SysV init script for ServiceMix
+# Managed by Chef - do not edit
+#
+# chkconfig: - 235 99 1
+#
+
+SMIX_HOME="<%= @home %>"
+SMIX_USER="<%= @user %>"
+
+[[ -x '/sbin/runuser' ]] && CMD='/sbin/runuser' || CMD='su'
+
+case "$1" in
+start)
+    $CMD - $SMIX_USER -s /bin/bash -c "${SMIX_HOME}/bin/start"
+    echo "ServiceMix started"
+;;
+stop)
+    $CMD - $SMIX_USER -s /bin/bash -c "${SMIX_HOME}/bin/stop"
+    echo "ServiceMix stopped"
+;;
+restart)
+    $0 stop
+    $0 start
+;;
+status)
+    $CMD - $SMIX_USER -s /bin/bash -c "${SMIX_HOME}/bin/status"
+;;
+*)
+    echo "Usage: $0 (stop|start|restart)"
+    exit 1
+;;
+esac
+
+exit 0
