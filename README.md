@@ -12,6 +12,9 @@ Java must be installed on the node.
 
 ## Attributes
 
+* `[:smix][:dist_url]` - the distribution URL
+  ** Default: *http://www.mirrorservice.org/sites/ftp.apache.org/servicemix/servicemix-5/5.1.0/apache-servicemix-5.1.0.zip*
+
 ## Usage
 
 ### servicemix::default

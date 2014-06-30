@@ -17,8 +17,15 @@
 require 'spec_helper'
 
 describe 'servicemix::default' do
+
+  let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
+
   context 'Installation' do
-    it 'download the servicemix distribution'
+
+    it 'download the servicemix distribution' do
+      expect(chef_run).to create_remote_file_if_missing("#{Chef::Config[:file_cache_path]}/servicemix.zip")
+    end
+
     it 'extract the servicemix distribution to a configurable location'
   end
   
@@ -27,5 +34,5 @@ describe 'servicemix::default' do
     it 'daemonises servicemix'
     it 'configures the firewall if present'
   end
-  
+
 end

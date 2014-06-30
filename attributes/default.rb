@@ -14,7 +14,4 @@
 # limitations under the License.
 #
 
-remote_file "#{Chef::Config[:file_cache_path]}/servicemix.zip" do
-  action :create_if_missing
-  source node[:smix][:dist_url]
-end
+default[:smix][:dist_url] = 'http://www.mirrorservice.org/sites/ftp.apache.org/servicemix/servicemix-5/5.1.0/apache-servicemix-5.1.0.zip'
