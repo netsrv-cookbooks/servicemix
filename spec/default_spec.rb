@@ -49,7 +49,6 @@ describe 'servicemix::default' do
       expect(chef_run).to run_execute('/etc/init.d/servicemix start')
     end
 
-    it 'configures the firewall if present'
   end
 
 end

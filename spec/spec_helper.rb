@@ -19,13 +19,4 @@ require 'rspec/expectations'
 require 'chefspec'
 require 'chefspec/berkshelf'
 
-# Utility methods for our tests
-module SpecHelper
-
-end
-
-RSpec.configure do |c|
-  c.include SpecHelper
-end
-
 at_exit { ChefSpec::Coverage.report! }
